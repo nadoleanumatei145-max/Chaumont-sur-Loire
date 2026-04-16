@@ -101,7 +101,7 @@ body {
 }
 img {
     border: 1px solid #26262b;
-    border-radius: 15px;
+    border-radius: 12px;
     object-fit: cover;
     display: block;
     width: 100%;
@@ -111,6 +111,7 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+    padding: 0;
 }
 nav {
     display: flex;
@@ -163,13 +164,17 @@ main {
 }
 .box {
     border: 1px solid #26262b;
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: #09090b;
     margin-bottom: 20px;
 }
-.box h2, p, h4{
-    margin-left: 8px;
-    margin-right: 8px;
+.box h2, p, h4, a{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.box h2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 details {
     border: 1px solid #26262b;
@@ -196,7 +201,7 @@ table {
 .img {
     flex: 1;
     display: flex;
-    margin-right: 8px;
+    margin: 0 16px 16px 16px;
     min-height: 0;
     position: relative;
 }
@@ -248,7 +253,7 @@ table {
     .img {
         height: 150px;
         min-width: 0;
-        margin-right: 0;
+        margin: 0;
         aspect-ratio: 4/2;
     }
 
