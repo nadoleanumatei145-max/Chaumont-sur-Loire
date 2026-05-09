@@ -1,16 +1,46 @@
-const checkbox = document.getElementById("checkbox");
-const elements = document.querySelectorAll(".rom");
+let tit = document.querySelector('#hero h1');
+let st = '';
+for (let i = 1; i <= 8; i++) {
+    st = st + `0 ${i}px 0 #2D3142,`;
+}
+st = st.slice(0, -1);
+tit.style.textShadow = st;
 
-document.getElementById("checkbox").checked = true;
+let checkbox = document.querySelector('input[type="checkbox"]');
+let fr = document.querySelectorAll('.fr');
+let ro = document.querySelectorAll('.ro');
+checkbox.checked = false;
+if(checkbox.checked){
+    ro.forEach(item => {
+        item.style.display = 'block';
+    })
+    fr.forEach(item => {
+        item.style.display = 'none';
+    })
+} else {
+    ro.forEach(item => {
+        item.style.display = 'none';
+    })
+    fr.forEach(item => {
+        item.style.display = 'block';
+    })
+}
 
-checkbox.addEventListener("change", e => {
-    if (document.getElementById('checkbox').checked) {
-        elements.forEach(element => {
-            element.style.display = 'block';
-        });
+checkbox.addEventListener('change', e => {
+    if(checkbox.checked){
+        ro.forEach(item => {
+            item.style.display = 'block';
+        })
+        fr.forEach(item => {
+            item.style.display = 'none';
+        })
     } else {
-        elements.forEach(element => {
-            element.style.display = 'none';
-        });
+        ro.forEach(item => {
+            item.style.display = 'none';
+        })
+        fr.forEach(item => {
+            item.style.display = 'block';
+        })
     }
+
 })
