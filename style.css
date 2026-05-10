@@ -1,3 +1,6 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -28,7 +31,32 @@ nav {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1;
+    padding: 0 4%;
+    z-index: 100;
+}
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #D8D5DB;
+    font-size: 2em;
+    cursor: pointer;
+}
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.lang-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 a {
     text-decoration: none;
@@ -122,4 +150,217 @@ img {
     border-radius: 0;
     border: 1px solid #2D3142;
     flex: 1;
+}
+.switch-wrapper .tgl {
+    display: none;
+}
+
+.switch-wrapper,
+.switch-wrapper *,
+.switch-wrapper *:after,
+.switch-wrapper *:before {
+    box-sizing: border-box;
+}
+
+.switch-wrapper .tgl::selection,
+.switch-wrapper .tgl:after::selection,
+.switch-wrapper .tgl:before::selection,
+.switch-wrapper .tgl *::selection,
+.switch-wrapper .tgl *:after::selection,
+.switch-wrapper .tgl *:before::selection,
+.switch-wrapper .tgl + .tgl-btn::selection {
+    background: none;
+}
+
+.switch-wrapper .tgl + .tgl-btn {
+    outline: 0;
+    display: block;
+    width: 56px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.switch-wrapper .tgl + .tgl-btn:after,
+.switch-wrapper .tgl + .tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.switch-wrapper .tgl + .tgl-btn:after {
+    left: 0;
+}
+
+.switch-wrapper .tgl + .tgl-btn:before {
+    display: none;
+}
+
+.switch-wrapper .tgl:checked + .tgl-btn:after {
+    left: 50%;
+}
+
+.switch-wrapper .tgl-light + .tgl-btn {
+    background: #222532;
+    border-radius: 28px;
+    padding: 2px;
+    transition: all 0.4s ease;
+}
+
+.switch-wrapper .tgl-light + .tgl-btn:after {
+    border-radius: 50%;
+    background: #D8D5DB;
+    transition: all 0.2s ease;
+}
+
+.switch-wrapper .tgl-light:checked + .tgl-btn {
+    background: #588157;
+}
+iframe {
+    border-radius: 20px;
+    border: 8px solid #171921;
+}
+#credits {
+    background-color: #ADACB5;
+    color: #171921;
+    border-radius: 15px;
+    min-width: 33%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    background-color: #171921;
+    width: 100%;
+    padding: 40px 7.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 1024px) {
+    #hero h1 {
+        font-size: 5em;
+    }
+    .categorie {
+        gap: 20px;
+    }
+    nav {
+        padding: 0 2%;
+    }
+    .box-wrapper {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .box {
+        border-radius: 0 !important;
+        border: none;
+        border-bottom: 1px solid #2D3142;
+    }
+    .box:first-child {
+        border-radius: 20px 20px 0 0 !important;
+    }
+    .box:last-child {
+        border-radius: 0 0 20px 20px !important;
+        border-bottom: none;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #credits {
+        width: 100%;
+        align-items: center;
+    }
+    footer div:last-child {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 5%;
+    }
+    .nav-header {
+        width: 100%;
+    }
+    #menu-toggle {
+        display: block;
+    }
+    .nav-spacer {
+        display: none;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+    nav.active .nav-links {
+        display: flex;
+    }
+    nav h2 {
+        font-size: 1.3em;
+        margin: 10px 0;
+    }
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    .lang-switch {
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    #hero {
+        height: 500px;
+    }
+    #hero h1 {
+        font-size: 3em;
+        text-align: center;
+        padding: 0 10px;
+    }
+    #myVideo {
+        height: 500px;
+    }
+    .categorie {
+        flex-direction: column;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 20px;
+    }
+    #istorie {
+        flex-direction: column-reverse;
+    }
+    .im {
+        height: 300px;
+        flex: none;
+    }
+    img {
+        border-width: 5px;
+    }
+    iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+    footer {
+        padding: 40px 5%;
+        gap: 30px;
+    }
 }

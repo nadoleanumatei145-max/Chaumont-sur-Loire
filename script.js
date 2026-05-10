@@ -44,3 +44,17 @@ checkbox.addEventListener('change', e => {
     }
 
 })
+
+let menuToggle = document.getElementById('menu-toggle');
+let nav = document.querySelector('nav');
+let navLinks = document.querySelectorAll('.nav-links a');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+    });
+});

@@ -14,24 +14,32 @@
 </head>
 <body>
     <nav>
-        <h2>Chaumont sur Loire</h2>
-        <div style="flex: 0.7"></div>
-        <a href="#info" class="ro">Informatii generale</a>
-        <a href="#info" class="fr">Informations Générales</a>
+        <div class="nav-header">
+            <h2>Chaumont sur Loire</h2>
+            <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <div class="nav-spacer" style="flex: 0.7"></div>
+        <div class="nav-links">
+            <a href="#info" class="ro">Informatii generale</a>
+            <a href="#info" class="fr">Informations Générales</a>
 
-        <a href="#istorie" class="ro">Istorie</a>
-        <a href="#istorie" class="fr">Histoire</a>
+            <a href="#istorie" class="ro">Istorie</a>
+            <a href="#istorie" class="fr">Histoire</a>
 
-        <a href="#curiozitati" class="ro">Curiozitati</a>
-        <a href="#curiozitati" class="fr">Curiosités</a>
+            <a href="#curiozitati" class="ro">Curiozitati</a>
+            <a href="#curiozitati" class="fr">Curiosités</a>
 
-        <a href="#video" class="ro">Videoclipuri</a>
-        <a href="#video" class="fr">Vidéos</a>
+            <a href="#video" class="ro">Videoclipuri</a>
+            <a href="#video" class="fr">Vidéos</a>
 
-        <div style="display: flex; align-items: center; justify-content: center;">
-            <h3 class="ro">Traducere</h3>
-            <h3 class="fr">Traduction</h3>
-            <input type="checkbox" >
+            <div class="lang-switch">
+                <h3 class="ro">Traducere</h3>
+                <h3 class="fr">Traduction</h3>
+                <div class="switch-wrapper" style="margin-left: 10px">
+                    <input class="tgl tgl-light" id="switch-basic-2" type="checkbox"/>
+                    <label class="tgl-btn" for="switch-basic-2"></label>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -118,13 +126,63 @@
         </div>
     </div>
 
-    <div class="categorie" id="video">
-        <h1 class="ro">Videoclipuri</h1>
+    <div class="categorie" id="video" style="flex-direction: column; gap: 0">
+        <h1 class="ro" style="width: 100%">Videoclipuri</h1>
         <h1 class="fr">Vidéos</h1>
-        <iframe width="560" height="315" src="//embed.francetv.fr/8171ed0fbf2d142560b685762cf609e2" title="Lecteur vidéo embed France télévisions" frameborder="0" scrolling="no" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/uMMPZk0hxLU?si=Zv290YM2Z5OUcOS9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Bxy34m3ICWo?si=JWrwB9ffW_TQhdFD&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div style="
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 50px;
+                justify-content: center;
+                background-color: #222532;
+                padding: 50px;
+                border-radius: 30px;
+">
+            <iframe width="560" height="315" src="//embed.francetv.fr/8171ed0fbf2d142560b685762cf609e2" title="Lecteur vidéo embed France télévisions" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uMMPZk0hxLU?si=Zv290YM2Z5OUcOS9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Bxy34m3ICWo?si=JWrwB9ffW_TQhdFD&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HzleNLe53yY?si=0BOYvmekf5L5loZ8&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
     </div>
+
+    <footer>
+        <div id="credits">
+            <img src="https://cngmm.ro/new/img/cngmm_logo_550.png" style="
+                border: none;
+                border-radius: 15px;
+                object-fit: cover;
+                display: block;
+                position: relative;
+                width: 75%;
+                height: auto;
+                z-index: 0;
+">
+            <p style="margin-top: 1em" class="ro">Profesor coordonator: <b>Ingrid Iavorschi</b></p>
+            <p style="margin-top: 1em" class="fr">Enseignant coordinateur: <b>Ingrid Iavorschi</b></p>
+            <p class="ro">Elev implicat: <b>Nadoleanu Matei</b></p>
+            <p class="fr">Étudiant impliqué: <b>Nadoleanu Matei</b></p>
+        </div>
+        <div>
+            <h1 class="ro" style="margin-top: 0">Bibliografie</h1>
+            <h1 class="fr" style="margin-top: 0">Bibliographie</h1>
+            <ul>
+                <li><a href="https://domaine-chaumont.fr/fr">Site officiel du Domaine de Chaumont-sur-Loire</a></li>
+                <li><a href="https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Chaumont-sur-Loire">Wikipedia Franceză – Château de Chaumont-sur-Loire</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Ch%C3%A2teau_de_Chaumont">Wikipedia Engleză – Château de Chaumont</a></li>
+                <li><a href="https://ro.wikipedia.org/wiki/Castelul_Chaumont-sur-Loire">Wikipedia Română – Castelul Chaumont-sur-Loire</a></li>
+                <li><a href="https://www.loirevalley-france.fr/ro/descopera-valea-loarei/castele/castelul-chaumont-sur-loire">Loire Valley France – Castelul Chaumont-sur-Loire (română)</a></li>
+                <li><a href="https://www.france.fr/ro/valea-loarei/articol/castelul-chaumont-sur-loire">France.fr – Castelul Chaumont-sur-Loire (română)</a></li>
+                <li><a href="https://www.lonelyplanet.com/points-of-interest/chateau-de-chaumont-sur-loire/1196634">Lonely Planet – Château de Chaumont-sur-Loire</a></li>
+                <li><a href="https://www.tripadvisor.fr/Attraction_Review-g196195-d2348392-Reviews-Chateau_de_Chaumont_sur_Loire-Chaumont_sur_Loire_Loir_et_Cher_Centre_Val_de_Loire.html">Tripadvisor – Château de Chaumont-sur-Loire (recenzii)</a></li>
+                <li><a href="https://www.valdeloire.org/Decouvrir-la-vallee-de-la-Loire/Patrimoine-mondial-de-l-UNESCO/Chaumont-sur-Loire">Val de Loire – Chaumont-sur-Loire, patrimoine UNESCO</a></li>
+                <li><a href="https://www.persee.fr/doc/bulmo_0007-473x_2003_num_161_1_1190">Persée – Articol științific de Florent Tesnier despre Chaumont</a></li>
+                <li><a href="https://france3-regions.franceinfo.fr/centre-val-de-loire/loir-cher/video-jardins-feeriques-passerelles-secretes-salon-de-princesse-et-histoire-d-amour-decouvrez-les-secrets-caches-du-chateau-de-chaumont-sur-loire-3189522.html">France 3 – Reportaj video: Secretele ascunse ale castelului Chaumont</a></li>
+                <li><a href="https://www.parcsetjardins.fr/jardins/domaine-de-chaumont-sur-loire-1058.html">Parcs et Jardins – Festivalul Internațional al Grădinilor de la Chaumont</a></li>
+            </ul>
+        </div>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>
